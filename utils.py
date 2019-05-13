@@ -82,4 +82,9 @@ def mean(s):
     """
     # BEGIN Question 1
     "*** YOUR CODE HERE ***"
+    assert s, "Sequence must not be empty"
+    total = 0
+    for i in range(len(s)):
+        total += s[i]
+    return total / len(s)
     # END Question 1
