@@ -109,6 +109,12 @@ def find_predictor(user, restaurants, feature_fn):
 
     # BEGIN Question 7
     "*** YOUR CODE HERE ***"
+    S_xx = sum([((x - mean(xs))**2) for x in xs])
+    S_yy = sum([((y - mean(ys))**2) for y in ys])
+    S_xy = sum([((x - mean(xs)) * (y - mean(ys))) for x, y in zip(xs, ys)])
+    b = S_xy / S_xx
+    a = mean(ys) - b * mean(xs)
+    r_squared = S_xy**2 / (S_xx * S_yy)
     # END Question 7
 
     def predictor(restaurant):
