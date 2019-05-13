@@ -76,11 +76,14 @@ def k_means(restaurants, k, max_updates=100):
 
     # Select initial centroids randomly by choosing k different restaurants
     centroids = [restaurant_location(r) for r in sample(restaurants, k)]
-
     while old_centroids != centroids and n < max_updates:
         old_centroids = centroids
         # BEGIN Question 6
         "*** YOUR CODE HERE ***"
+        clusters = group_by_centroid(restaurants, centroids)
+        centroids = []
+        for cluster in clusters:
+            centroids.append(find_centroid(cluster))
         # END Question 6
         n += 1
     return centroids
