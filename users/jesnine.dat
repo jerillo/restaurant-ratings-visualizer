@@ -1,0 +1,13 @@
+make_user(
+    'Jesnine Erillo',      # name
+    [                   # reviews
+        make_review('Crossroads', 1.0),
+        make_review("D'Yar", 4.5),
+        make_review("Gypsy's Trattoria Italiano", 3.0),
+        make_review('La Burrita', 4.0),
+        make_review('Mandarin House', 3.0),
+        make_review('Quickly', 2.0),
+        make_review('Subway', 1.0),
+        make_review('Top Dog', 4.0),
+    ]
+)
